@@ -15,10 +15,9 @@ class ViewController: UIViewController {
         ApiServiceMovie.shared.fetchMovieById(id: 105) { (result) in
             switch result {
             case .success(let movie):
-                print(movie)
-                let image = ImageLoadView(imageViewModel: ImageLoadViewModel(path: movie.imagePath,size: 500))
-                self.view.addSubview(image)
-                image.snp.makeConstraints { (make) in
+                let headerView = MovieHeaderView(movie: movie)
+                self.view.addSubview(headerView)
+                headerView.snp.makeConstraints { (make) in
                     make.edges.equalToSuperview()
                 }
             case .failure(let error):

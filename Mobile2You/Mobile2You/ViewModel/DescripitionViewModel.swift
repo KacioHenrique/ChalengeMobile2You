@@ -7,13 +7,24 @@
 //
 
 import Foundation
-
+import UIKit
 class DescripitionViewModel:NSObject {
     let movie:Movie!
     init(movie:Movie){
         self.movie = movie
         super.init()
-
     }
-    
+    func infoLikes() -> String {
+        return "\(movie.likes) Likes"
+    }
+    func infoPopularity() -> String {
+        return "\(movie.popularity) Popularity"
+    }
+    func buttonSelect(bool:Bool) -> UIImage {
+        if bool {
+            return ImageEnum.fullHeart.getImage()
+        } else {
+            return ImageEnum.emptyHeart.getImage()
+        }
+    }
 }

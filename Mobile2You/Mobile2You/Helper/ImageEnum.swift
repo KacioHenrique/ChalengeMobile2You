@@ -12,6 +12,7 @@ enum ImageEnum:String {
     case dontLoadImage = "DontLoad"
     case fullHeart = "fullHeart"
     case emptyHeart = "emptyHeart"
+    case circle = "halfCircle"
     func getImage() -> UIImage {
         return UIImage(named: self.rawValue) ?? UIImage()
     }

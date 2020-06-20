@@ -7,7 +7,25 @@
 		<key>Mobile2You.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7AD668F9249E371500B99E00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7AD6690F249E371600B99E00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7AD6691A249E371600B99E00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

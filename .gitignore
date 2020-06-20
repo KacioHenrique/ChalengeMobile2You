@@ -1,8 +1,2 @@
-
-.DS_Store
-
-*.pbxproj
-
-*.xcworkspacedata
-
-*.xcuserstate
+Pods/
+*DS_Store

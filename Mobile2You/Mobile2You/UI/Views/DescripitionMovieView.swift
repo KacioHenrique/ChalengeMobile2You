@@ -1,5 +1,5 @@
 //
-//  DescripitionMovie.swift
+//  DescripitionMovieView.swift
 //  Mobile2You
 //
 //  Created by Kacio Batista on 20/06/20.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SnapKit
-class DescripitionMovie: UIView {
+class DescripitionMovieView: UIView {
     var descripitionViewModel:DescripitionViewModel!
     lazy var title = FactoryUI.make.makeLabelDefault(text: self.descripitionViewModel.movie.title)
     let button = FactoryUI.make.makeButton(image: ImageEnum.emptyHeart.getImage(), selectImage: ImageEnum.fullHeart.getImage())

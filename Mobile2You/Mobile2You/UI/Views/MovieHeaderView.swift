@@ -21,12 +21,12 @@ class MovieHeaderView: UIView {
     
     fileprivate func setupUI(movie:Movie) {
         let imageLoad = ImageLoadView(imageViewModel: ImageLoadViewModel(path: movie.imagePath, size: 500))
-        let descripitionMovie = DescripitionMovie(descripitionViewModel: DescripitionViewModel(movie: movie))
+        let descripitionMovie = DescripitionMovieView(descripitionViewModel: DescripitionViewModel(movie: movie))
         self.addSubview(imageLoad)
         self.addSubview(descripitionMovie)
         imageLoad.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.9)
+            make.height.equalToSuperview().multipliedBy(0.8)
         }
         descripitionMovie.snp.makeConstraints { (make) in
             make.top.equalTo(imageLoad.snp.bottom)

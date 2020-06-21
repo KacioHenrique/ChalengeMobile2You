@@ -33,10 +33,13 @@ class ImageLoadView: UIImageView {
         self.activity.startAnimating()
         imageViewModel.loadImage { [weak self] (image) in
             guard let self = self else { return }
-            UIView.animate(withDuration: 0.5) { [weak self] in
-                self?.activity.stopAnimating()
+            self.alpha = 0
+            UIView.animate(withDuration: 1) { [weak self] in
                 self?.image = image
+                self?.alpha = 1
+                self?.activity.stopAnimating()
             }
+
         }
     }
 }

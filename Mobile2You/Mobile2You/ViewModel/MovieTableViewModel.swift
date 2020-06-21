@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 protocol MoiveTableViewDelagate {
     func dataLoad() -> Void
 }
@@ -16,31 +17,50 @@ class MovieTableViewModel: NSObject {
             guard let _ = self.delgate else {
                 return
             }
-            fetchFavoriteMovie(id: self.movieId)
+            request(id: self.movieId)
         }
     }
     var delgate:MoiveTableViewDelagate? {
         didSet {
-            fetchFavoriteMovie(id: self.movieId)
+            if let _ = self.delgate {
+                request(id: self.movieId)
+            }
         }
     }
     var movie:Movie?
+    var similarMovies:SimilarMovies?
     init(movie id:Int , delgate:MoiveTableViewDelagate? = nil){
         self.movieId = id
         super.init()
-    
+        
     }
-    private func fetchFavoriteMovie(id:Int) {
+
+}
+// MARK: - Resquest Data
+extension MovieTableViewModel {
+    private func request(id:Int) {
+        let group = DispatchGroup()
+        group.enter()
         ApiServiceMovie.shared.fetchMovieById(id: id) { [unowned self] result in
             switch result {
             case .success(let movie):
                 self.movie = movie
                 self.delgate?.dataLoad()
             case .failure(_):
-                // make a failure Resquest
-                print("falhou")
+                print("erro")
             }
         }
+        group.enter()
+        ApiServiceMovie.shared.fettchMovies(id: id) { [unowned self] result in
+            group.leave()
+            switch result {
+            case .success(let similar):
+                self.similarMovies = similar
+                self.delgate?.dataLoad()
+            case .failure(_):
+                print("erro")
+            }
+        }
+       
     }
-    
 }

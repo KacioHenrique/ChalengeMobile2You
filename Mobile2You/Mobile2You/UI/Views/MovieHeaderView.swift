@@ -20,7 +20,8 @@ class MovieHeaderView: UIView {
     }
     
     fileprivate func setupUI(movie:Movie) {
-        let imageLoad = ImageLoadView(imageViewModel: ImageLoadViewModel(path: movie.imagePath, size: 500))
+        let imageLoad = ImageLoadView(imageViewModel: ImageLoadViewModel())
+        imageLoad.imageViewModel.feacthImage(path: movie.imagePath, size: 500)
         let descripitionMovie = DescripitionMovieView(descripitionViewModel: DescripitionViewModel(movie: movie))
         self.addSubview(imageLoad)
         self.addSubview(descripitionMovie)
@@ -32,5 +33,6 @@ class MovieHeaderView: UIView {
             make.top.equalTo(imageLoad.snp.bottom)
             make.left.right.bottom.equalToSuperview()
         }
+        self.backgroundColor = .black
     }
 }

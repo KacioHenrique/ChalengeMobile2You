@@ -9,16 +9,17 @@
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
-    lazy var imageLoadView = ImageLoadView(imageViewModel: ImageLoadViewModel(path:""))
+    static let identifier = "MovieCellIdentifier"
+    lazy var imageLoadView = ImageLoadView(imageViewModel: ImageLoadViewModel())
     let vStack = FactoryUI.make.makeStackView(axis: .vertical, alignment: .leading, distribution: .equalSpacing, space: 5)
     let title = FactoryUI.make.makeRegulaFont(text: "text qualquer")
     let subTitle = FactoryUI.make.makeRegulaFont(text: "Terro",font: UIFont.systemFont(ofSize: 15, weight: .regular))
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-         super.init(style: style, reuseIdentifier: reuseIdentifier)
-         setupUI()
-     }
-  
+        super.init(style: style, reuseIdentifier: MovieTableViewCell.identifier)
+        setupUI()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -39,17 +40,21 @@ class MovieTableViewCell: UITableViewCell {
             make.right.equalToSuperview()
             make.centerY.equalToSuperview()
         }
+        self.backgroundColor = .black
     }
     func updateData(movie:Movie) {
-        title.text = movie.title
-        subTitle.text = "Terro"
-        imageLoadView = ImageLoadView(imageViewModel:ImageLoadViewModel(path:movie.imagePath))
-        
+        DispatchQueue.main.async {
+            self.title.text = movie.title
+            self.subTitle.text = "Terro"
+            self.imageLoadView.imageViewModel.feacthImage(path: movie.imagePath)
+        }
     }
     override func prepareForReuse() {
         super.prepareForReuse()
-        title.text = nil
-        subTitle.text = nil
-        imageLoadView.image = nil
+        DispatchQueue.main.async {
+            self.title.text = nil
+            self.subTitle.text = nil
+            self.imageLoadView.image = nil
+        }
     }
 }

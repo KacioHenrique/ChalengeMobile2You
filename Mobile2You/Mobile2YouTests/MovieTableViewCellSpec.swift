@@ -13,7 +13,7 @@ import Nimble_Snapshots
 import UIKit
 @testable import Mobile2You
 class MovieTableViewCellSpec: QuickSpec {
-    let recordMode:Bool = true
+    let recordMode:Bool = false
     let nameSnapShot = "MovieTableViewCell"
     let cell = MovieTableViewCell(style: .default, reuseIdentifier: "cell")
     override func spec() {

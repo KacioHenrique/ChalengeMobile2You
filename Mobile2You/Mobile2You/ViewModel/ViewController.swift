@@ -12,14 +12,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        ApiServiceMovie.shared.fetchMovieById(id: 105) { (result) in
+        ApiServiceMovie.shared.fettchMovies(id: 105) { (result) in
             switch result {
-            case .success(let movie):
-                let headerView = MovieHeaderView(movie: movie)
-                self.view.addSubview(headerView)
-                headerView.snp.makeConstraints { (make) in
-                    make.edges.equalToSuperview()
-                }
+            case .success(let result):
+                result.movies.forEach({print($0)})
             case .failure(let error):
                 print(error)
             }

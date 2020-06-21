@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = MovieTableViewController(movieTableViewModel: MovieTableViewModel(movie: 105))
+        window.rootViewController =  MovieTableViewController(movieTableViewModel: MovieTableViewModel(movie: 105))
         self.window = window
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window?.windowScene = windowScene

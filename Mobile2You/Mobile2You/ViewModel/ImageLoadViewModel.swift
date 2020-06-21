@@ -8,28 +8,25 @@
 
 import Foundation
 import UIKit
+protocol ImageLoadDelegate {
+    func loadImage(image:UIImage)
+}
 class ImageLoadViewModel: NSObject {
-    let path:String!
-    let size:Int!
-    init(path:String,size:Int = 200) {
-        self.path = path
-        self.size = size
-        super.init()
-    }
-
-    func loadImage(completionHandler:@escaping (UIImage) -> Void) {
-        ApiServiceMovie.shared.fettchImage(path: self.path,size: size) { (result) in
+    var delegate:ImageLoadDelegate?
+    
+    func feacthImage(path:String,size:Int = 200) {
+        ApiServiceMovie.shared.fettchImage(path: path,size: size) { (result) in
             switch result {
-                case .success(let data):
-                    if let image = UIImage(data: data,scale: 1) {
-                        completionHandler(image)
-                    } else {
-                        completionHandler(ImageEnum.dontLoadImage.getImage())
-                    }
-                case .failure(_):
-                    completionHandler(ImageEnum.dontLoadImage.getImage())
+            case .success(let data):
+                if let image = UIImage(data: data,scale: 1) {
+                    self.delegate?.loadImage(image: image)
+                } else {
+                    self.delegate?.loadImage(image: ImageEnum.dontLoadImage.getImage())
+                }
+            case .failure(_):
+                self.delegate?.loadImage(image: ImageEnum.dontLoadImage.getImage())
             }
         }
     }
-
+    
 }

@@ -15,14 +15,21 @@ struct Movie : Codable {
     let likes:Int
     let popularity:Double
     var genres:Genres? = nil
+    var genresId:[Int]? = []
     enum CodingKeys: String, CodingKey {
         case imagePath = "poster_path"
         case title = "title"
         case id = "id"
         case likes = "vote_count"
+        case genresId = "genre_ids"
         case popularity
         case genres
     }
 }
-typealias Movies = [Movie]
+struct SimilarMovies : Codable {
+    let movies:[Movie]
+    enum CodingKeys: String, CodingKey {
+        case movies = "results"
+    }
+}
 

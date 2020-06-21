@@ -16,12 +16,13 @@ final class MovieTableViewController: UITableViewController {
     }
     init(movieTableViewModel:MovieTableViewModel){
         self.movieTableViewModel = movieTableViewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init(style: .grouped)
         self.movieTableViewModel.delgate = self
-
+        self.tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
+        self.tableView.tableFooterView = UIView(frame: .zero)
     }
     
-  
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let movie = self.movieTableViewModel.movie else {
@@ -29,25 +30,35 @@ final class MovieTableViewController: UITableViewController {
         }
         return MovieHeaderView(movie: movie)
     }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return UIScreen.main.bounds.height * 0.6
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let movie =  movieTableViewModel.similarMovies?.movies[indexPath.row] , let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier) as? MovieTableViewCell else {
+            return UITableViewCell(frame: .zero)
+        }
+        
+        cell.updateData(movie: movie)
+        return cell
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return movieTableViewModel.similarMovies?.movies.count ?? 0
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
     }
     required init?(coder: NSCoder) {
-          fatalError("init(coder:) has not been implemented")
-      }
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 extension MovieTableViewController: MoiveTableViewDelagate {
     func dataLoad() {
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
-
 }

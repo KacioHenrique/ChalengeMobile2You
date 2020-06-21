@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ImageLoadView: UIImageView {
+class ImageLoadView: UIImageView , ImageLoadDelegate {
     let imageViewModel:ImageLoadViewModel!
     lazy var activity:ActivityImage = {
         let activity = ActivityImage(indicatorColor: UIColor.white)
@@ -22,24 +22,19 @@ class ImageLoadView: UIImageView {
     init(imageViewModel:ImageLoadViewModel) {
         self.imageViewModel = imageViewModel
         super.init(frame: .zero)
-        loadImage()
+        self.imageViewModel.delegate = self
+        activity.startAnimating()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
- 
-    func loadImage() {
-        self.activity.startAnimating()
-        imageViewModel.loadImage { [weak self] (image) in
-            guard let self = self else { return }
-            self.alpha = 0
-            UIView.animate(withDuration: 1) { [weak self] in
-                self?.image = image
-                self?.alpha = 1
-                self?.activity.stopAnimating()
-            }
-
+    func loadImage(image: UIImage) {
+        self.alpha = 0.5
+        UIView.animate(withDuration: 1) { [weak self] in
+            self?.image = image
+            self?.alpha = 1
+            self?.activity.stopAnimating()
         }
     }
 }

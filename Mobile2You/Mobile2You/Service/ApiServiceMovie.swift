@@ -19,8 +19,14 @@ final class ApiServiceMovie: BaseApiService {
             completionHandler(response.result)
         }
     }
+    
     func fettchImage(path:String,size:Int,completionHandler:@escaping (_ result:Result<Data,AFError>) -> Void) {
-        AF.request(EndPoint.image(size: size, path: path).getValue(url: baseURL)).responseData { (response) in
+        AF.request(EndPoint.image(size: size, path: path).getValue(url: baseImage)).responseData { (response) in
+            completionHandler(response.result)
+        }
+    }
+    func fettchMovies(id:Int,completionHandler:@escaping (_ response:Result<SimilarMovies, AFError>) -> Void) {
+        AF.request(EndPoint.similar(id: id).getValue(url: baseURL),method: .get,parameters: parameters).responseDecodable { (response : (DataResponse<SimilarMovies, AFError>)) in
             completionHandler(response.result)
         }
     }

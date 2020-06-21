@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 final class MovieTableViewController: UITableViewController {
     
     let movieTableViewModel:MovieTableViewModel!
@@ -42,7 +41,7 @@ final class MovieTableViewController: UITableViewController {
             return UITableViewCell(frame: .zero)
         }
         
-        cell.updateData(movie: movie)
+        cell.updateData(movie: movie, genres: self.movieTableViewModel.formatGenres(idsGenre: movie.genresId))
         return cell
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +55,12 @@ final class MovieTableViewController: UITableViewController {
     }
 }
 extension MovieTableViewController: MoiveTableViewDelagate {
+    func error(descripitionError: String) {
+        let errorView = ErrorViewScreen(descripitionError: descripitionError)
+        errorView.frame = CGRect(x:0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
+        self.view.addSubview(errorView)
+    }
+    
     func dataLoad() {
         DispatchQueue.main.async {
             self.tableView.reloadData()

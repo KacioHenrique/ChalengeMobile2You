@@ -8,8 +8,10 @@
 
 import UIKit
 import Foundation
+import Alamofire
 protocol MoiveTableViewDelagate {
     func dataLoad() -> Void
+    func error(descripitionError: String)
 }
 class MovieTableViewModel: NSObject {
     var movieId:Int! {
@@ -27,12 +29,13 @@ class MovieTableViewModel: NSObject {
             }
         }
     }
+    var genresMovies:GenresMovies?
     var movie:Movie?
     var similarMovies:SimilarMovies?
     init(movie id:Int , delgate:MoiveTableViewDelagate? = nil){
         self.movieId = id
         super.init()
-        
+        fetchGenres()
     }
 
 }
@@ -46,8 +49,8 @@ extension MovieTableViewModel {
             case .success(let movie):
                 self.movie = movie
                 self.delgate?.dataLoad()
-            case .failure(_):
-                print("erro")
+            case .failure(let error):
+                self.delgate?.error(descripitionError: error.localizedDescription)
             }
         }
         group.enter()
@@ -57,10 +60,34 @@ extension MovieTableViewModel {
             case .success(let similar):
                 self.similarMovies = similar
                 self.delgate?.dataLoad()
-            case .failure(_):
-                print("erro")
+            case .failure(let error):
+                self.delgate?.error(descripitionError: error.localizedDescription)
             }
         }
-       
+    }
+    private func fetchGenres() {
+        ApiServiceMovie.shared.fettchGenre { [unowned self] result in
+            switch result {
+            case .success(let genresMovies):
+                self.genresMovies = genresMovies
+            case .failure(let error):
+                self.delgate?.error(descripitionError: error.localizedDescription)
+            }
+        }
+    }
+    func formatGenres(idsGenre:[Int]?) -> String {
+        guard  let idsGenre = idsGenre else {
+            return ""
+        }
+        let genresformat = genresMovies?.genres.reduce("", { (result, genre) -> String in
+            if idsGenre.contains(genre.id) {
+                if result != "" {
+                    return result + ", " + genre.name
+                }
+                return genre.name
+            }
+            return result
+        })
+        return genresformat ?? ""
     }
 }

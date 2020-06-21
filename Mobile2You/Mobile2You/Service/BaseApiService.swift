@@ -17,6 +17,7 @@ class BaseApiService {
         case movie(id:Int)
         case similar(id:Int)
         case image(size:Int,path:String)
+        case genres
         func getValue(url:String) -> String {
             switch self {
             case .movie(let id):
@@ -25,6 +26,8 @@ class BaseApiService {
                 return url + "/3/movie/\(id)/similar"
             case .image(let size,let path):
                 return url + "/t/p/w\(size)" + path
+            case .genres:
+                return url + "/3/genre/movie/list"
             }
             
         }

@@ -30,5 +30,10 @@ final class ApiServiceMovie: BaseApiService {
             completionHandler(response.result)
         }
     }
+    func fettchGenre(completionHandler:@escaping (_ response:Result<GenresMovies, AFError>) -> Void) {
+        AF.request(EndPoint.genres.getValue(url: self.baseURL),method: .get,parameters: parameters).responseDecodable { (response : (DataResponse<GenresMovies, AFError>)) in
+            completionHandler(response.result)
+        }
+    }
 }
 

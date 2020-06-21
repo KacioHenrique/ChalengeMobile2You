@@ -42,11 +42,12 @@ class MovieTableViewCell: UITableViewCell {
         }
         self.backgroundColor = .black
     }
-    func updateData(movie:Movie) {
+    func updateData(movie:Movie , genres:String) {
         DispatchQueue.main.async {
             self.title.text = movie.title
-            self.subTitle.text = "Terro"
+            self.subTitle.text = genres
             self.imageLoadView.imageViewModel.feacthImage(path: movie.imagePath)
+            
         }
     }
     override func prepareForReuse() {

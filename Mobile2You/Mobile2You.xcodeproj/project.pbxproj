@@ -28,6 +28,7 @@
 		7A5D7DE5249FA4AD0068A194 /* ImageLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD66982249E3E5400B99E00 /* ImageLoadView.swift */; };
 		7A5D7DE6249FA4AF0068A194 /* DescripitionMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD66990249E49AC00B99E00 /* DescripitionMovieView.swift */; };
 		7A5D7DE7249FA4B20068A194 /* MovieHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D5C63249EACA500B8227A /* MovieHeaderView.swift */; };
+		7A5D7DEC249FFD520068A194 /* ErrorViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D7DEB249FFD520068A194 /* ErrorViewScreen.swift */; };
 		7AD668FE249E371500B99E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD668FD249E371500B99E00 /* AppDelegate.swift */; };
 		7AD66900249E371500B99E00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD668FF249E371500B99E00 /* SceneDelegate.swift */; };
 		7AD66907249E371600B99E00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD66906249E371600B99E00 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		7A4D5C77249F86ED00B8227A /* MovieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewModel.swift; sourceTree = "<group>"; };
 		7A4D5C7A249F91D500B8227A /* MovieTableViewCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCellSpec.swift; sourceTree = "<group>"; };
 		7A5B3B7C249E71C5001C1880 /* FactoryUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryUI.swift; sourceTree = "<group>"; };
+		7A5D7DEB249FFD520068A194 /* ErrorViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewScreen.swift; sourceTree = "<group>"; };
 		7AD668FA249E371500B99E00 /* Mobile2You.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mobile2You.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD668FD249E371500B99E00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AD668FF249E371500B99E00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				7AD66982249E3E5400B99E00 /* ImageLoadView.swift */,
 				7AD66990249E49AC00B99E00 /* DescripitionMovieView.swift */,
 				7A4D5C63249EACA500B8227A /* MovieHeaderView.swift */,
+				7A5D7DEB249FFD520068A194 /* ErrorViewScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				7A4D5C73249EDF4400B8227A /* MovieTableViewCell.swift in Sources */,
 				7A4D5C75249EE05B00B8227A /* Genres.swift in Sources */,
 				7A4D5C78249F86ED00B8227A /* MovieTableViewModel.swift in Sources */,
+				7A5D7DEC249FFD520068A194 /* ErrorViewScreen.swift in Sources */,
 				7A5B3B7D249E71C5001C1880 /* FactoryUI.swift in Sources */,
 				7AD66991249E49AC00B99E00 /* DescripitionMovieView.swift in Sources */,
 				7AD66988249E3FAC00B99E00 /* ImageEnum.swift in Sources */,

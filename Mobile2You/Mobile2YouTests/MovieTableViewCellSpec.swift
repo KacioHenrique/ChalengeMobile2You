@@ -19,7 +19,7 @@ class MovieTableViewCellSpec: QuickSpec {
     override func spec() {
          let movie = Movie(title: "Back to the Future", id: 105, imagePath: "/7lyBcpYB0Qt8gYhXYaEZUNlNQAv.jpg", likes: 13269, popularity: 30.289)
         cell.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
-        cell.updateData(movie: movie)
+        cell.updateData(movie: movie, genres: "terror")
         describe("spec of MovieTableViewCell") {
             it("has valid snapshot") {
                

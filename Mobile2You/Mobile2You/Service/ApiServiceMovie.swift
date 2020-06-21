@@ -25,12 +25,12 @@ final class ApiServiceMovie: BaseApiService {
             completionHandler(response.result)
         }
     }
-    func fettchMovies(id:Int,completionHandler:@escaping (_ response:Result<SimilarMovies, AFError>) -> Void) {
+    func fettchSimilarMovies(id:Int,completionHandler:@escaping (_ response:Result<SimilarMovies, AFError>) -> Void) {
         AF.request(EndPoint.similar(id: id).getValue(url: baseURL),method: .get,parameters: parameters).responseDecodable { (response : (DataResponse<SimilarMovies, AFError>)) in
             completionHandler(response.result)
         }
     }
-    func fettchGenre(completionHandler:@escaping (_ response:Result<GenresMovies, AFError>) -> Void) {
+    func fettchGenres(completionHandler:@escaping (_ response:Result<GenresMovies, AFError>) -> Void) {
         AF.request(EndPoint.genres.getValue(url: self.baseURL),method: .get,parameters: parameters).responseDecodable { (response : (DataResponse<GenresMovies, AFError>)) in
             completionHandler(response.result)
         }

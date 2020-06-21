@@ -17,8 +17,8 @@ final class MovieTableViewController: UITableViewController {
         self.movieTableViewModel = movieTableViewModel
         super.init(style: .grouped)
         self.movieTableViewModel.delgate = self
-        self.tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
-        self.tableView.tableFooterView = UIView(frame: .zero)
+        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
+        tableView.contentInsetAdjustmentBehavior = .never
     }
     
     

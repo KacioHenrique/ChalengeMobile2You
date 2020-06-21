@@ -43,11 +43,10 @@ class FactoryUI:NSObject {
             return textLabel
             }()
     }
-    func makeButton(image:UIImage,selectImage:UIImage) -> UIButton {
+    func makeButton(image:UIImage) -> UIButton {
         return {
             let button = UIButton(frame: .zero)
             button.setImage(image, for: .normal)
-            button.setImage(selectImage, for: .selected)
             return button
             }()
     }

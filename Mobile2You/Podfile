@@ -14,6 +14,7 @@ target 'Mobile2You' do
     # Pods for testing
     pod 'Nimble-Snapshots'
     pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'Mobile2YouUITests' do

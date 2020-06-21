@@ -12,7 +12,7 @@ import SnapKit
 class DescripitionMovieView: UIView {
     var descripitionViewModel:DescripitionViewModel!
     lazy var title = FactoryUI.make.makeBoldFont(text: self.descripitionViewModel.movie.title)
-    let button = FactoryUI.make.makeButton(image: ImageEnum.emptyHeart.getImage(), selectImage: ImageEnum.fullHeart.getImage())
+    let button = FactoryUI.make.makeButton(image: ImageEnum.emptyHeart.getImage())
     init(descripitionViewModel:DescripitionViewModel) {
         self.descripitionViewModel = descripitionViewModel
         super.init(frame: .zero)

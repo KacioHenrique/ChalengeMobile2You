@@ -16,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Nimble
   - Nimble-Snapshots
   - Quick
   - SnapKit
@@ -37,6 +38,6 @@ SPEC CHECKSUMS:
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 1b6f46d7363d01262b66ef31159d9a3b42339d93
+PODFILE CHECKSUM: ba3acecc79d338688adff7b33f1ab8885c18cd93
 
 COCOAPODS: 1.9.3

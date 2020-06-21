@@ -54,7 +54,7 @@ extension MovieTableViewModel {
             }
         }
         group.enter()
-        ApiServiceMovie.shared.fettchMovies(id: id) { [unowned self] result in
+        ApiServiceMovie.shared.fettchSimilarMovies(id: id) { [unowned self] result in
             group.leave()
             switch result {
             case .success(let similar):
@@ -66,7 +66,7 @@ extension MovieTableViewModel {
         }
     }
     private func fetchGenres() {
-        ApiServiceMovie.shared.fettchGenre { [unowned self] result in
+        ApiServiceMovie.shared.fettchGenres { [unowned self] result in
             switch result {
             case .success(let genresMovies):
                 self.genresMovies = genresMovies

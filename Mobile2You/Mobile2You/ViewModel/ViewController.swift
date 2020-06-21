@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        ApiServiceMovie.shared.fettchMovies(id: 105) { (result) in
+        ApiServiceMovie.shared.fettchSimilarMovies(id: 105) { (result) in
             switch result {
             case .success(let result):
                 result.movies.forEach({print($0)})

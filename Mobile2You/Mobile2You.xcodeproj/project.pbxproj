@@ -26,6 +26,7 @@
 		7A5B3B7B249E62D1001C1880 /* ImageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD66980249E3CFE00B99E00 /* ImageEnum.swift */; };
 		7A5B3B7D249E71C5001C1880 /* FactoryUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B3B7C249E71C5001C1880 /* FactoryUI.swift */; };
 		7A5B3B7F249E7A90001C1880 /* FactoryUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B3B7C249E71C5001C1880 /* FactoryUI.swift */; };
+		7A5D7DE3249FA22F0068A194 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D5C72249EDF4400B8227A /* MovieTableViewCell.swift */; };
 		7AD668FE249E371500B99E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD668FD249E371500B99E00 /* AppDelegate.swift */; };
 		7AD66900249E371500B99E00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD668FF249E371500B99E00 /* SceneDelegate.swift */; };
 		7AD66907249E371600B99E00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD66906249E371600B99E00 /* Assets.xcassets */; };
@@ -224,8 +225,8 @@
 			children = (
 				7AD66914249E371600B99E00 /* DescripitionMovieSpec.swift */,
 				7A4D5C65249EB98100B8227A /* MovieHeaderViewSpec.swift */,
-				7AD66916249E371600B99E00 /* Info.plist */,
 				7A4D5C7A249F91D500B8227A /* MovieTableViewCellSpec.swift */,
+				7AD66916249E371600B99E00 /* Info.plist */,
 			);
 			path = Mobile2YouTests;
 			sourceTree = "<group>";
@@ -578,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A5D7DE3249FA22F0068A194 /* MovieTableViewCell.swift in Sources */,
 				7A5B3B7B249E62D1001C1880 /* ImageEnum.swift in Sources */,
 				7AD66915249E371600B99E00 /* DescripitionMovieSpec.swift in Sources */,
 				7A4D5C68249EBD7500B8227A /* ImageLoadView.swift in Sources */,

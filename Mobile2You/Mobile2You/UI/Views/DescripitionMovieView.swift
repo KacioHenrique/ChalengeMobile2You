@@ -11,7 +11,7 @@ import UIKit
 import SnapKit
 class DescripitionMovieView: UIView {
     var descripitionViewModel:DescripitionViewModel!
-    lazy var title = FactoryUI.make.makeLabelDefault(text: self.descripitionViewModel.movie.title)
+    lazy var title = FactoryUI.make.makeBoldFont(text: self.descripitionViewModel.movie.title)
     let button = FactoryUI.make.makeButton(image: ImageEnum.emptyHeart.getImage(), selectImage: ImageEnum.fullHeart.getImage())
     init(descripitionViewModel:DescripitionViewModel) {
         self.descripitionViewModel = descripitionViewModel
@@ -29,7 +29,7 @@ class DescripitionMovieView: UIView {
     }
     fileprivate func infoViewInline(image:UIImage, text:String) -> UIView {
         let image = UIImageView(image:image)
-        let label = FactoryUI.make.makeLabelDefault(text: text, font: UIFont.systemFont(ofSize: 17, weight: .regular))
+        let label = FactoryUI.make.makeRegulaFont(text:text)
         let view = UIView(frame: .zero)
         view.addSubview(image)
         view.addSubview(label)

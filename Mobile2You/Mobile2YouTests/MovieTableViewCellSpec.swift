@@ -14,14 +14,19 @@ import UIKit
 @testable import Mobile2You
 class MovieTableViewCellSpec: QuickSpec {
     let recordMode:Bool = true
+    let nameSnapShot = "MovieTableViewCell"
+    let cell = MovieTableViewCell(style: .default, reuseIdentifier: "cell")
     override func spec() {
+         let movie = Movie(title: "Back to the Future", id: 105, imagePath: "/7lyBcpYB0Qt8gYhXYaEZUNlNQAv.jpg", likes: 13269, popularity: 30.289)
+        cell.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
+        cell.updateData(movie: movie)
         describe("spec of MovieTableViewCell") {
             it("has valid snapshot") {
                
                 if self.recordMode {
-                    expect(movieHeaderView) == recordSnapshot(nameSnapShot)
+                    expect(self.cell) == recordSnapshot(self.nameSnapShot)
                 }
-                expect(movieHeaderView) == snapshot(nameSnapShot)
+                expect(self.cell) == snapshot(self.nameSnapShot)
             }
         }
     }

@@ -21,7 +21,18 @@ class FactoryUI:NSObject {
             return stackView
             }()
     }
-    func makeLabelDefault(text:String,font:UIFont = UIFont.systemFont(ofSize: 22, weight: .bold),textColor:UIColor = .white , numberLine:Int = 0, textAlignment:NSTextAlignment = .left) -> UILabel {
+    func makeBoldFont(text:String,font:UIFont = UIFont.systemFont(ofSize: 22, weight: .bold),textColor:UIColor = .white , numberLine:Int = 0, textAlignment:NSTextAlignment = .left) -> UILabel {
+        return {
+            let textLabel = UILabel(frame: .zero)
+            textLabel.text  = text
+            textLabel.textAlignment = textAlignment
+            textLabel.font = font
+            textLabel.textColor = textColor
+            textLabel.numberOfLines = 0
+            return textLabel
+            }()
+    }
+    func makeRegulaFont(text:String,font:UIFont = UIFont.systemFont(ofSize: 17, weight: .regular),textColor:UIColor = .white , numberLine:Int = 0, textAlignment:NSTextAlignment = .left) -> UILabel {
         return {
             let textLabel = UILabel(frame: .zero)
             textLabel.text  = text

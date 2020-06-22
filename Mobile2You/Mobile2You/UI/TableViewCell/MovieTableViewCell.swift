@@ -26,6 +26,7 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     fileprivate func setupUI() {
+        self.backgroundColor = .black
         vStack.addArrangedSubview(title)
         vStack.addArrangedSubview(subTitle)
         self.contentView.addSubview(imageLoadView)

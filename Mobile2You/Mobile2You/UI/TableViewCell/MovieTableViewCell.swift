@@ -12,7 +12,7 @@ class MovieTableViewCell: UITableViewCell {
     static let identifier = "MovieCellIdentifier"
     lazy var imageLoadView = ImageLoadView(imageViewModel: ImageLoadViewModel())
     let vStack = FactoryUI.make.makeStackView(axis: .vertical, alignment: .leading, distribution: .equalSpacing, space: 5)
-    let title = FactoryUI.make.makeRegulaFont(text: "text qualquer")
+    let title = FactoryUI.make.makeRegulaFont(text: "text qualquer",font:  UIFont.systemFont(ofSize: 17, weight: .semibold))
     let subTitle = FactoryUI.make.makeRegulaFont(text: "Terro",font: UIFont.systemFont(ofSize: 15, weight: .regular))
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -32,16 +32,15 @@ class MovieTableViewCell: UITableViewCell {
         self.contentView.addSubview(vStack)
         
         imageLoadView.snp.makeConstraints { (make) in
-            make.width.equalTo(50)
+            make.width.equalTo(75)
             make.left.top.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().inset(10)
         }
         vStack.snp.makeConstraints { (make) in
-            make.left.equalTo(imageLoadView.snp.right).offset(10)
+            make.left.equalTo(imageLoadView.snp.right).offset(40)
             make.right.equalToSuperview()
             make.centerY.equalToSuperview()
         }
-        self.backgroundColor = .black
     }
     func updateData(movie:Movie , genres:String) {
         DispatchQueue.main.async {

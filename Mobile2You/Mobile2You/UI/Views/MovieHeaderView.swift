@@ -30,7 +30,7 @@ class MovieHeaderView: UIView {
 //            make.height.equalToSuperview().multipliedBy(0.8)
         }
         descripitionMovie.snp.makeConstraints { (make) in
-            make.top.equalTo(imageLoad.snp.bottom)
+            make.top.equalTo(imageLoad.snp.bottom).inset(80)
             make.height.equalTo(80)
             make.left.right.bottom.equalToSuperview()
         }

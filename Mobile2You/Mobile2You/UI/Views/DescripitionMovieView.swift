@@ -36,7 +36,7 @@ class DescripitionMovieView: UIView {
         view.addSubview(label)
         view.backgroundColor = .blue
         image.snp.makeConstraints { (make) in
-            make.width.height.equalTo(25)
+            make.width.height.equalTo(20)
             make.centerY.equalToSuperview()
             make.leadingMargin.equalToSuperview()
         }
@@ -62,14 +62,15 @@ class DescripitionMovieView: UIView {
         return stackView
     }
     fileprivate func setupUI() {
-        self.backgroundColor = .black
+        self.backgroundColor = .clear
         let titleSection = titleMovieSection()
         let movieRatesSection = movieRateSection()
         self.addSubview(titleSection)
         self.addSubview(movieRatesSection)
         titleSection.snp.makeConstraints { (make) in
-            make.top.left.equalToSuperview().offset(5)
-            make.right.equalToSuperview().inset(5)
+            make.top.equalToSuperview().offset(5)
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().inset(20)
             make.height.equalToSuperview().multipliedBy(0.7)
         }
         movieRatesSection.snp.makeConstraints { (make) in

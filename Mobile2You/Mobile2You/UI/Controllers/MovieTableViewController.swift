@@ -48,7 +48,7 @@ final class MovieTableViewController: UITableViewController {
         return movieTableViewModel.similarMovies?.movies.count ?? 0
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return 150
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

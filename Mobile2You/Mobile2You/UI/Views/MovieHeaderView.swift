@@ -20,17 +20,18 @@ class MovieHeaderView: UIView {
     }
     
     fileprivate func setupUI(movie:Movie) {
-        let imageLoad = ImageLoadView(imageViewModel: ImageLoadViewModel())
+        let imageLoad = ImageLoadView(imageViewModel: ImageLoadViewModel() , effect: true)
         imageLoad.imageViewModel.feacthImage(path: movie.imagePath, size: 500)
         let descripitionMovie = DescripitionMovieView(descripitionViewModel: DescripitionViewModel(movie: movie))
         self.addSubview(imageLoad)
         self.addSubview(descripitionMovie)
         imageLoad.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.8)
+//            make.height.equalToSuperview().multipliedBy(0.8)
         }
         descripitionMovie.snp.makeConstraints { (make) in
             make.top.equalTo(imageLoad.snp.bottom)
+            make.height.equalTo(80)
             make.left.right.bottom.equalToSuperview()
         }
         self.backgroundColor = .black

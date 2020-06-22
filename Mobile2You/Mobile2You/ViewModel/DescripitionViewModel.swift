@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class DescripitionViewModel:NSObject {
     let movie:Movie!
+    private let defaults = UserDefaults.standard
     init(movie:Movie){
         self.movie = movie
         super.init()
@@ -20,11 +21,10 @@ class DescripitionViewModel:NSObject {
     func infoPopularity() -> String {
         return "\(movie.popularity) Popularity"
     }
-    func buttonSelect(bool:Bool) -> UIImage {
-        if bool {
-            return ImageEnum.fullHeart.getImage()
-        } else {
-            return ImageEnum.emptyHeart.getImage()
-        }
+    func setInUserDefauls(like:Bool) {
+        defaults.set(like, forKey: "\(movie.id)")
+    }
+    func getImageButton() -> UIImage {
+        defaults.bool(forKey: "\(movie.id)") ? ImageEnum.fullHeart.getImage() : ImageEnum.emptyHeart.getImage()
     }
 }

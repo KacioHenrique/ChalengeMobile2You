@@ -12,7 +12,7 @@ import SnapKit
 class DescripitionMovieView: UIView {
     var descripitionViewModel:DescripitionViewModel!
     lazy var title = FactoryUI.make.makeBoldFont(text: self.descripitionViewModel.movie.title)
-    let button = FactoryUI.make.makeButton(image: ImageEnum.emptyHeart.getImage())
+    lazy var button = FactoryUI.make.makeButton(image: self.descripitionViewModel.getImageButton())
     init(descripitionViewModel:DescripitionViewModel) {
         self.descripitionViewModel = descripitionViewModel
         super.init(frame: .zero)
@@ -25,7 +25,8 @@ class DescripitionMovieView: UIView {
     }
     @objc func actionButton() {
         button.isSelected = !button.isSelected
-        button.setImage(descripitionViewModel.buttonSelect(bool: button.isSelected), for: .normal)
+        descripitionViewModel.setInUserDefauls(like: button.isSelected)
+        button.setImage(descripitionViewModel.getImageButton(), for: .normal)
     }
     fileprivate func infoViewInline(image:UIImage, text:String) -> UIView {
         let image = UIImageView(image:image)

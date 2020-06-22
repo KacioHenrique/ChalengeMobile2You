@@ -31,7 +31,7 @@ final class MovieTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UIScreen.main.bounds.height * 0.6
+        return UIScreen.main.bounds.height * 0.8
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

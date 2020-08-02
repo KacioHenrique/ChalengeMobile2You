@@ -5,13 +5,12 @@
 //  Created by Kacio Batista on 21/06/20.
 //  Copyright © 2020 Kacio Batista. All rights reserved.
 //
-
+@testable import Mobile2You
 import Foundation
 import Quick
 import Nimble
 import Nimble_Snapshots
 import UIKit
-@testable import Mobile2You
 class MovieTableViewCellSpec: QuickSpec {
     let recordMode:Bool = false
     let nameSnapShot = "MovieTableViewCell"

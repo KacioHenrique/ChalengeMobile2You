@@ -5,13 +5,12 @@
 //  Created by Kacio Batista on 21/06/20.
 //  Copyright © 2020 Kacio Batista. All rights reserved.
 //
-
+@testable import Mobile2You
 import Foundation
 import Quick
 import Nimble
 
 class SpecBaseApiService: QuickSpec {
-    
     override func spec() {
         describe("Test ApiServiceMovie") {
             sepcFettchGenres()

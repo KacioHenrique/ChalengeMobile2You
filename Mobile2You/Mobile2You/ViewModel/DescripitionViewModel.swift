@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 class DescripitionViewModel:NSObject {
     let movie:Movie!
     private let defaults = UserDefaults.standard

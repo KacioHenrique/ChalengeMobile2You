@@ -10,6 +10,8 @@ import Foundation
 import Quick
 import Nimble
 import UIKit
+import UIKit
+@testable import Mobile2You
 
 class BaseApiServiceSpec: QuickSpec {
     var baseApi:BaseApiService!

@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+
 class MovieHeaderView: UIView {
-    
+    lazy var imageLoad = ImageLoadView(imageViewModel: ImageLoadViewModel() , effect: true)
+
     init(movie:Movie) {
         super.init(frame: .zero)
         setupUI(movie: movie)
@@ -20,20 +22,21 @@ class MovieHeaderView: UIView {
     }
     
     fileprivate func setupUI(movie:Movie) {
-        let imageLoad = ImageLoadView(imageViewModel: ImageLoadViewModel() , effect: true)
         imageLoad.imageViewModel.feacthImage(path: movie.imagePath, size: 500)
         let descripitionMovie = DescripitionMovieView(descripitionViewModel: DescripitionViewModel(movie: movie))
         self.addSubview(imageLoad)
         self.addSubview(descripitionMovie)
+        
         imageLoad.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
-//            make.height.equalToSuperview().multipliedBy(0.8)
         }
+        
         descripitionMovie.snp.makeConstraints { (make) in
             make.top.equalTo(imageLoad.snp.bottom).inset(80)
             make.height.equalTo(80)
             make.left.right.bottom.equalToSuperview()
         }
+        
         self.backgroundColor = .black
     }
 }

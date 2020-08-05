@@ -9,7 +9,8 @@
 import Foundation
 import Quick
 import Nimble
-
+import UIKit
+@testable import Mobile2You
 class ApiServiceMovieSpec : QuickSpec {
     
     override func spec() {

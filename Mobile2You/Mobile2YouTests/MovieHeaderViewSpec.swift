@@ -14,9 +14,11 @@ import UIKit
 @testable import Mobile2You
 class MovieHeaderViewSpec: QuickSpec {
     let recordMode:Bool = false
+    
     override func spec() {
         let movie = Movie(title: "Back to the Future", id: 105, imagePath: "/7lyBcpYB0Qt8gYhXYaEZUNlNQAv.jpg", likes: 13269, popularity: 30.289)
         let movieHeaderView = MovieHeaderView(movie: movie)
+        movieHeaderView.imageLoad.isHidden = true
         movieHeaderView.frame = CGRect(x: 0, y: 0, width: 750, height: 1334)
         describe("testing MovieHeaderView") {
             it("MovieHeaderView View Test") {

@@ -48,7 +48,6 @@ class MovieTableViewCell: UITableViewCell {
             self.title.text = movie.title
             self.subTitle.text = genres
             self.imageLoadView.imageViewModel.feacthImage(path: movie.imagePath)
-            
         }
     }
     override func prepareForReuse() {

@@ -15,7 +15,7 @@ import UIKit
 class DescripitionMovieSpec: QuickSpec {
     let recordMode:Bool = false
     override func spec() {
-        let frameToTesting = CGRect(x:0, y: 0, width: 640, height: 100)
+        let frameToTesting = CGRect(x:0, y: 0, width:UIScreen.main.bounds.width, height: 100)
         let movie = Movie(title: "Back to the Future", id: 105, imagePath: "/7lyBcpYB0Qt8gYhXYaEZUNlNQAv.jpg", likes: 13269, popularity: 30.289)
         let descripitionMovieView = DescripitionMovieView(descripitionViewModel: DescripitionViewModel(movie: movie))
         descripitionMovieView.frame = frameToTesting

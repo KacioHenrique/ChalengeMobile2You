@@ -29,6 +29,7 @@
 		7A5D7DE6249FA4AF0068A194 /* DescripitionMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD66990249E49AC00B99E00 /* DescripitionMovieView.swift */; };
 		7A5D7DE7249FA4B20068A194 /* MovieHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D5C63249EACA500B8227A /* MovieHeaderView.swift */; };
 		7A5D7DEC249FFD520068A194 /* ErrorViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D7DEB249FFD520068A194 /* ErrorViewScreen.swift */; };
+		7A6F758F24A4F6F500453C12 /* BaseApiServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6F758E24A4F6F500453C12 /* BaseApiServiceSpec.swift */; };
 		7AD668FE249E371500B99E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD668FD249E371500B99E00 /* AppDelegate.swift */; };
 		7AD66900249E371500B99E00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD668FF249E371500B99E00 /* SceneDelegate.swift */; };
 		7AD66907249E371600B99E00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD66906249E371600B99E00 /* Assets.xcassets */; };
@@ -48,7 +49,7 @@
 		7AD66993249E4A4200B99E00 /* DescripitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD66992249E4A4200B99E00 /* DescripitionViewModel.swift */; };
 		7AD66995249E4F1100B99E00 /* DescripitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD66992249E4A4200B99E00 /* DescripitionViewModel.swift */; };
 		7AD66996249E509F00B99E00 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6697A249E3CE600B99E00 /* Movie.swift */; };
-		7AEA166324A0101F00BAA8C9 /* SpecBaseApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEA166224A0101F00BAA8C9 /* SpecBaseApiService.swift */; };
+		7AEA166324A0101F00BAA8C9 /* ApiServiceMovieSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEA166224A0101F00BAA8C9 /* ApiServiceMovieSpec.swift */; };
 		C32ACE67F93216494B3E6ED8 /* Pods_Mobile2You_Mobile2YouUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BF19D02B109C001FCD8EB7 /* Pods_Mobile2You_Mobile2YouUITests.framework */; };
 		EF1D79670157E7936F8DF929 /* Pods_Mobile2You.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33305826F7FCA29F11B100C /* Pods_Mobile2You.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		7A4D5C7A249F91D500B8227A /* MovieTableViewCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCellSpec.swift; sourceTree = "<group>"; };
 		7A5B3B7C249E71C5001C1880 /* FactoryUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryUI.swift; sourceTree = "<group>"; };
 		7A5D7DEB249FFD520068A194 /* ErrorViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewScreen.swift; sourceTree = "<group>"; };
+		7A6F758E24A4F6F500453C12 /* BaseApiServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiServiceSpec.swift; sourceTree = "<group>"; };
 		7AD668FA249E371500B99E00 /* Mobile2You.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mobile2You.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD668FD249E371500B99E00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AD668FF249E371500B99E00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 		7AD66984249E3F1900B99E00 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD66990249E49AC00B99E00 /* DescripitionMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescripitionMovieView.swift; sourceTree = "<group>"; };
 		7AD66992249E4A4200B99E00 /* DescripitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescripitionViewModel.swift; sourceTree = "<group>"; };
-		7AEA166224A0101F00BAA8C9 /* SpecBaseApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecBaseApiService.swift; sourceTree = "<group>"; };
+		7AEA166224A0101F00BAA8C9 /* ApiServiceMovieSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceMovieSpec.swift; sourceTree = "<group>"; };
 		8234216DD896EAB0A3493FF1 /* Pods-Mobile2You.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile2You.debug.xcconfig"; path = "Target Support Files/Pods-Mobile2You/Pods-Mobile2You.debug.xcconfig"; sourceTree = "<group>"; };
 		94E60DC2A604CE389D337D8F /* Pods-Mobile2YouTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile2YouTests.debug.xcconfig"; path = "Target Support Files/Pods-Mobile2YouTests/Pods-Mobile2YouTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9FDEE63BCEA318C820834B6B /* Pods-Mobile2You-Mobile2YouUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile2You-Mobile2YouUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mobile2You-Mobile2YouUITests/Pods-Mobile2You-Mobile2YouUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -231,7 +233,8 @@
 				7AD66914249E371600B99E00 /* DescripitionMovieSpec.swift */,
 				7A4D5C65249EB98100B8227A /* MovieHeaderViewSpec.swift */,
 				7A4D5C7A249F91D500B8227A /* MovieTableViewCellSpec.swift */,
-				7AEA166224A0101F00BAA8C9 /* SpecBaseApiService.swift */,
+				7AEA166224A0101F00BAA8C9 /* ApiServiceMovieSpec.swift */,
+				7A6F758E24A4F6F500453C12 /* BaseApiServiceSpec.swift */,
 				7AD66916249E371600B99E00 /* Info.plist */,
 			);
 			path = Mobile2YouTests;
@@ -592,9 +595,10 @@
 				7AD66915249E371600B99E00 /* DescripitionMovieSpec.swift in Sources */,
 				7AD66995249E4F1100B99E00 /* DescripitionViewModel.swift in Sources */,
 				7A5D7DE4249FA4AA0068A194 /* ActivityImage.swift in Sources */,
+				7A6F758F24A4F6F500453C12 /* BaseApiServiceSpec.swift in Sources */,
 				7AD66996249E509F00B99E00 /* Movie.swift in Sources */,
 				7A4D5C7B249F91D500B8227A /* MovieTableViewCellSpec.swift in Sources */,
-				7AEA166324A0101F00BAA8C9 /* SpecBaseApiService.swift in Sources */,
+				7AEA166324A0101F00BAA8C9 /* ApiServiceMovieSpec.swift in Sources */,
 				7A5B3B7F249E7A90001C1880 /* FactoryUI.swift in Sources */,
 				7A4D5C6B249EBDE100B8227A /* ApiServiceMovie.swift in Sources */,
 				7A4D5C66249EB98100B8227A /* MovieHeaderViewSpec.swift in Sources */,

@@ -22,6 +22,7 @@ class DescripitionMovieSpec: QuickSpec {
         describe("DescripitionMovie View Test") {
             it("is should appear DescripitionMovie button empty heart") {
                 let nameSnapShot = "DescripitionMovie"
+                descripitionMovieView.button.setImage(ImageEnum.emptyHeart.getImage(), for: .normal)
                 if self.recordMode {
                    expect(descripitionMovieView) == recordSnapshot(nameSnapShot)
                 }

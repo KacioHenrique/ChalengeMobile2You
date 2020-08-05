@@ -10,7 +10,7 @@ import Foundation
 import Quick
 import Nimble
 
-class SpecBaseApiService: QuickSpec {
+class ApiServiceMovieSpec : QuickSpec {
     
     override func spec() {
         describe("Test ApiServiceMovie") {

@@ -12,12 +12,13 @@ import Nimble
 import Nimble_Snapshots
 import UIKit
 @testable import Mobile2You
+
 class MovieHeaderViewSpec: QuickSpec {
     let recordMode:Bool = false
     override func spec() {
         let movie = Movie(title: "Back to the Future", id: 105, imagePath: "/7lyBcpYB0Qt8gYhXYaEZUNlNQAv.jpg", likes: 13269, popularity: 30.289)
         let movieHeaderView = MovieHeaderView(movie: movie)
-        movieHeaderView.frame = UIScreen.main.bounds
+        movieHeaderView.frame = CGRect(x:0, y: 0, width: 640, height: 1136)
         describe("testing MovieHeaderView") {
             it("MovieHeaderView View Test") {
                 let nameSnapShot = "MovieHeaderView"

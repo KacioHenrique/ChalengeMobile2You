@@ -17,7 +17,7 @@ class MovieHeaderViewSpec: QuickSpec {
     override func spec() {
         let movie = Movie(title: "Back to the Future", id: 105, imagePath: "/7lyBcpYB0Qt8gYhXYaEZUNlNQAv.jpg", likes: 13269, popularity: 30.289)
         let movieHeaderView = MovieHeaderView(movie: movie)
-        movieHeaderView.frame = UIScreen.main.bounds
+        movieHeaderView.frame = CGRect(x: 0, y: 0, width: 750, height: 1334)
         describe("testing MovieHeaderView") {
             it("MovieHeaderView View Test") {
                 let nameSnapShot = "MovieHeaderView"
